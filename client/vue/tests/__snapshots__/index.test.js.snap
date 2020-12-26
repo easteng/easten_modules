@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snweb-module dist files exports modules correctly 1`] = `
+Array [
+  "Base",
+  "version",
+  "Button",
+  "SmSystemUsers",
+  "SmSystemRoles",
+  "SmSystemOrganizationUnits",
+  "SmSystemOrganizationUnitTreeSelect",
+  "SmSystemDataDictionaryTreeSelect",
+  "SmSystemDataDictionaries",
+  "default",
+]
+`;

@@ -1,0 +1,115 @@
+// @import '../../style/themes/default';
+// @import '../../style/mixins/index';
+
+// @icon-prefix-cls: ~'@{ant-prefix}-icon';
+
+.sm-basic-scope-select {
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  &.empty {
+    color: #c0c0c0;
+  }
+  .label-icon {
+    margin: 0 4px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &.round {
+    border-radius: 32px;
+  }
+}
+
+.sm-basic-scope-select-modal {
+  @borderColor: #e8e8e8;
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .selected {
+    border: 1px solid @borderColor;
+    padding: 4px;
+    height: 52px;
+    position: relative;
+    overflow-y: auto;
+    .seperator {
+      margin: 0 4px;
+    }
+    .empty {
+      position: absolute;
+      color: #bfbfbf;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+    }
+    .btn-close {
+      margin-left: 4px;
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.45);
+      &:hover {
+        color: rgba(0, 0, 0, 0.75);
+      }
+    }
+    .label {
+      padding: 10px;
+    }
+  }
+
+  .label-icon {
+    margin: 0 4px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .modal-list {
+    padding: 10px;
+    overflow: auto;
+    margin-top: 10px;
+    height: 300px;
+    border: 1px solid @borderColor;
+    .ant-spin-spinning {
+      position: absolute;
+      margin: 140px 220px;
+    }
+  }
+
+  .scope-select-panel {
+    &.disabled {
+      color: rgba(0, 0, 0, 0.25);
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+      opacity: 1;
+    }
+
+    &.bordered {
+      border: 1px solid gainsboro;
+      border-radius: 5px;
+      padding: 2px;
+
+      .disabled {
+        background-color: none;
+        cursor: not-allowed;
+      }
+    }
+
+    .title {
+      margin: 0 4px;
+    }
+
+    .ant-tag {
+      margin: 3px 3px;
+    }
+
+    .tip {
+      margin-left: 10px;
+      color: #afaebe;
+    }
+  }
+}

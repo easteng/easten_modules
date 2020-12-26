@@ -1,0 +1,97 @@
+.sm-oa-duty-schedule {
+  .oa-calendar-descriptions {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .oa-calendar {
+      flex: 10;
+    }
+    .oa-description-m {
+      flex: 4;
+    }
+  }
+}
+.oa-descriptions {
+  height: 100%;
+  .descriptions-card {
+    height: 100%;
+  }
+}
+.sm-oa-duty-schedule-modal {
+  .user-button {
+    display: flex;
+    .user {
+      flex: 5;
+    }
+    .add-button {
+      flex: 1;
+      margin-left: 10px;
+    }
+  }
+  .isShow {
+    visibility: hidden;
+  }
+  .show {
+    visibility: visible;
+  }
+}
+.oa-calendar {
+  margin-right: 10px;
+  .ant-fullcalendar-date{
+    &:hover {
+      .icon-divider {
+        display: inline;
+      }
+    }
+
+    &:hover {
+      .add {
+        display: inline;
+      }
+    }
+  }
+  .item {
+    height: 100%;
+    width: 100%;
+    .item-user {
+      height: calc(100% - 34px);
+      overflow: auto;
+      span {
+        margin-right: 2px;
+      }
+    }
+
+    .icon-divider {
+      display: none;
+      .user-icons {
+        border-top: 1px solid #cfcaca;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .sum-user {
+          font-size: 14px;
+        }
+        .icon {
+          margin-right: 2px;
+          font-size: 18px;
+        }
+      }
+    }
+   
+  }
+  .add-styles {
+    height: 100%;
+    width: 100%;
+    .add {
+      display: none;
+    }
+   
+  }
+
+  .addStyle {
+    bottom: 10px;
+    position: absolute;
+    right: 20px;
+  }
+}

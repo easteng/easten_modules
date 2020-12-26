@@ -1,0 +1,59 @@
+// @import '../../style/themes/default';
+// @import '../../style/mixins/index';
+
+// @icon-prefix-cls: ~'@{ant-prefix}-icon';
+
+@borderColor: #e8e8e8;
+
+.sm-basic-selectedManufacturers-modal {
+  .selected {
+    border: 1px solid @borderColor;
+    padding: 4px;
+    max-height: 80px;
+    align-items: center;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    .empty {
+      position: absolute;
+      color: #bfbfbf;
+      top: 21%;
+      left: 43%;
+    }
+    .selected-item {
+      background-color: #fafafa;
+      border: 1px solid #e8e8e8;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 6px;
+      margin: 4px;
+      border-radius: 4px;
+      color: rgba(0, 0, 0, 0.65);
+
+      .selected-name {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .btn-close {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.45);
+        &:hover {
+          color: rgba(0, 0, 0, 0.75);
+        }
+      }
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .modal-list {
+    margin-top: 10px;
+    height: 300px;
+    border: 1px solid @borderColor;
+  }
+}

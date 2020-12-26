@@ -1,0 +1,70 @@
+// @import '../../style/themes/default';
+// @import '../../style/mixins/index';
+
+// @icon-prefix-cls: ~'@{ant-prefix}-icon';
+
+.sm-resource-store-equipment-record {
+  .form-item-equip {
+    margin-bottom: 11px;
+  }
+
+  .row-bottom-border {
+    border-bottom: 1px solid rgb(232, 232, 232);
+  }
+
+  .ant-steps-item-title {
+    position: relative;
+    display: block;
+  }
+  .title {
+    width: 100%;
+    display: flex;
+    .title-left {
+      color: rgba(0, 0, 0, 0.65);
+      float: left;
+      flex: 3;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .title-middle {
+      flex: 1;
+    }
+    .title-right {
+      .title-right-personInfo {
+        flex: 1;
+      }
+
+      .title-right-showInfo {
+        flex: 1;
+      }
+      float: right;
+      display: flex;
+
+      margin-left: auto;
+      color: rgb(0 127 255);
+    }
+    .title-right-info {
+      padding-right: 10px;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+  }
+
+  .title-icon {
+    .ant-steps-item-icon {
+      margin-right: 10px;
+      background: #52c41a00;
+      .ant-steps-icon {
+        font-size: 14px;
+      }
+    }
+    .ant-steps-item-content {
+      min-height: 35px;
+    }
+  }
+}
+
+.sm-resource-store-equipment-record-mini {
+  margin: 15px 0 0 8px;
+}

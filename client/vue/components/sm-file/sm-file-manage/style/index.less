@@ -1,0 +1,692 @@
+// 工具栏的高度
+@bar-height: 44px;
+@mainHeight: 650px;
+@line-color: gainsboro;
+.f-container {
+  display: flex;
+  margin: 0 auto;
+  max-height: @mainHeight;
+  min-height: @mainHeight;
+
+  .f-left-devision {
+    flex: 1;
+    position: absolute;
+    border-bottom: 1px solid @line-color;
+    width: 96%;
+    top: 85px;
+  }
+
+  .f-left {
+    flex: 1;
+    border-right: 1px solid @line-color;
+
+    .f-left-content {
+      // height: @mainHeight;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .f-org-content {
+        overflow-y: auto;
+        max-height: @mainHeight*0.9;
+      }
+
+      .f-share-content {
+        border-top: 1px solid @line-color;
+        overflow-y: auto;
+        max-height: @mainHeight*0.3;
+        // margin-bottom: 10px;
+        padding-top: 10px;
+      }
+    }
+    .f-delete {
+      margin-left: 33px;
+    }
+
+    .f-delete-selected {
+      background-color: #bae7ff;
+      width: 91px;
+      padding: 1px 10px;
+      margin-left: 23px;
+      border-radius: 1px;
+    }
+
+    .f-delete span {
+      margin-left: 6px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    // 左侧panel
+    .f-panel {
+      width: 100%;
+      height: 100%;
+
+      .f-panel-head {
+        position: relative;
+        height: 44px;
+        // display: flex;
+        padding: 5px 0px;
+        justify-content: space-between;
+        border-bottom: 1px solid @line-color;
+        .ant-btn-link {
+          color: unset;
+          padding: 0 6px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .f-btn-trans {
+          margin-left: 10%;
+        }
+        .f-upload-badge {
+          .ant-scroll-number {
+            font-size: 10px;
+            /* width: 1px; */
+            height: 16px;
+            max-width: 5px;
+            line-height: 16px;
+            padding: 0px;
+            right: 1px;
+            top: 6px;
+            background-color: #1890ff;
+          }
+        }
+      }
+      .f-panel-item {
+        height: 100%;
+      }
+    }
+  }
+
+  .f-right {
+    flex: 4;
+    .f-resource-bar {
+      display: flex;
+      height: @bar-height;
+      width: 100%;
+      border-bottom: 1px solid @line-color;
+      justify-content: space-between;
+
+      .f-menus {
+        padding: 4px 15px;
+        // width: 100%;
+        li {
+          float: left;
+          margin: 0 10px;
+          cursor: pointer;
+        }
+        li span {
+          margin-left: 6px;
+        }
+        li:hover {
+          color: #1890ff;
+        }
+        .f-top-menu {
+          padding-top: 0px;
+          .ant-btn-link {
+            padding: 0 10px;
+            color: #595959;
+            &:hover {
+              color: #1890ff;
+            }
+          }
+        }
+      }
+      .f-menus-progress {
+        width: 100%;
+        padding: 4px 15px;
+        line-height: 30px;
+      }
+      .f-list-matrix {
+        font-size: 23px;
+        margin-left: 10px;
+        line-height: 30px;
+        &:hover {
+          cursor: pointer;
+          color: #1890ff;
+        }
+      }
+      .ant-select:first-child > .ant-select-selection {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+      .ant-input-search .ant-input {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
+    .f-resource-list {
+      height: 100%;
+      flex: 1;
+      .f-resource-content {
+        height: 95%;
+        position: relative;
+        .f-resource-footer {
+          position: absolute;
+          bottom: 10px;
+          width: 100%;
+          .f-resource-selected {
+            width: 100px;
+            float: left;
+            line-height: 40px;
+            margin-left: 20px;
+          }
+        }
+        .f-table {
+          overflow-y: auto;
+          .ant-table-body {
+            // max-height: calc(@mainHeight - 100px);
+            overflow-y: scroll;
+            /* diy 滚动条核心代码 */
+            &::-webkit-scrollbar {
+              /*滚动条整体样式*/
+              width: 4px;
+              /*高宽分别对应横竖滚动条的尺寸*/
+              height: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              /*滚动条里面小方块*/
+              border-radius: 5px;
+              -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+              background: rgba(255, 255, 255, 0.2);
+            }
+
+            &::-webkit-scrollbar-track {
+              /*滚动条里面轨道*/
+              -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+              border-radius: 0;
+              background: rgba(0, 0, 0, 0.1);
+            }
+          }
+          .ant-table-wrapper,
+          .ant-spin-nested-loading,
+          .ant-spin-container,
+          .ant-table,
+          .ant-table-content {
+            height: 100%;
+          }
+          .ant-table-tbody {
+            max-height: 90%;
+            overflow-y: auto;
+          }
+          .ant-table-small {
+            border: none;
+            border: none;
+          }
+        }
+        // 缩略图样式
+        .f-thum-content {
+          display: flex;
+          align-content: flex-start;
+          flex-wrap: wrap;
+          padding: 26px;
+          .f-thum {
+            i {
+              font-size: 40px;
+            }
+            p {
+              margin-top: 10px;
+              font-size: 10px;
+            }
+          }
+          .f-thum-item {
+            width: 100px;
+            height: 100px;
+            // background-color: rgb(26, 212, 203);
+            margin: 5px;
+            text-align: center;
+            padding: 24px 10px 0;
+            position: relative;
+            &:hover {
+              cursor: pointer;
+              background-color: #f7f7f7;
+            }
+            .f-thum-file {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .selected {
+            background-color: #f7f7f7;
+            border: 1px solid #178fff;
+            border-radius: 7px;
+          }
+          .f-thum-selected {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #178fff;
+            position: absolute;
+            top: 8px;
+            left: 7px;
+            background: #178fff;
+            border-radius: 3px;
+            .f-thum-selected-label {
+              width: 30px;
+              height: 30px;
+              border-radius: 4px;
+              background-color: rgb(0, 150, 136);
+              position: relative;
+              &:after {
+                content: '\00a0';
+                display: inline-block;
+                border: 1px solid #f3f4f5;
+                border-top-width: 0px;
+                border-right-width: 0;
+                width: 10px;
+                height: 5px;
+                -webkit-transform: rotate(-50deg);
+                position: absolute;
+                top: 3px;
+                left: -6px;
+              }
+            }
+          }
+        }
+        .f-thum-mini {
+          .f-thum-selected {
+            width: 15px;
+            height: 15px;
+            border: 2px solid #178fff;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: #178fff;
+            border-radius: 3px;
+          }
+          .f-thum-file {
+            width: 100%;
+            height: 70%;
+            bottom: -20px;
+            position: relative;
+            i {
+              font-size: 30px;
+            }
+            p {
+              font-size: 10px;
+            }
+            img {
+              width: 100%;
+              height: 70%;
+            }
+          }
+          .f-thum-folder {
+            i {
+              font-size: 30px;
+            }
+            p {
+              font-size: 10px;
+            }
+          }
+          .f-thum-item {
+            width: 80px;
+            height: 80px;
+            padding: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 文件传输列表样式
+.f-trans-state {
+  .f-trans-item li {
+    margin: 10px 5px;
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  .f-trans-item li:hover {
+    cursor: pointer;
+  }
+
+  .f-trans-item .active {
+    color: #1890ff;
+  }
+}
+
+// 重命名验证样式
+.f-input-error {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+// 系统管理-成员选择框
+@borderColor: #e8e8e8;
+
+.sm-file-member-modal {
+  .panel {
+    display: flex;
+    flex-direction: column;
+
+    .panel-header {
+      height: 44px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid @borderColor;
+    }
+
+    .panel-body {
+      height: 100%;
+      overflow: auto;
+      display: flex;
+      flex: 1;
+      overflow-y: auto;
+
+      .ant-form {
+        width: 100%;
+      }
+    }
+
+    .ant-tabs {
+      height: 100%;
+      width: 100%;
+
+      .ant-tabs-bar {
+        margin-bottom: 0;
+      }
+
+      .ant-tabs-content {
+        height: calc(100% - 45px);
+      }
+    }
+  }
+
+  .selected {
+    border: 1px solid @borderColor;
+    padding: 4px;
+    height: 140px;
+    overflow-y: auto;
+    .empty {
+      position: absolute;
+      color: #bfbfbf;
+      top: 21%;
+      left: 43%;
+    }
+    .selected-item {
+      background-color: #fafafa;
+      border: 1px solid #e8e8e8;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 6px;
+      margin: 4px;
+      border-radius: 2px;
+      color: rgba(0, 0, 0, 0.65);
+      .btn-close {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.45);
+        &:hover {
+          color: rgba(0, 0, 0, 0.75);
+        }
+      }
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .modal-list {
+    margin-top: 0px;
+    height: 220px;
+    border: 1px solid @borderColor;
+  }
+
+  .sm-system-member-modal-roles,
+  .sm-system-member-modal-users {
+    flex: 1;
+    display: flex;
+    .left {
+      flex: 2;
+      overflow: auto;
+      border-right: 1px solid @borderColor;
+    }
+    .right {
+      overflow: auto;
+      flex: 3;
+    }
+  }
+}
+
+// 权限选择配置样式
+.f-promission-panel {
+  display: flex;
+  border: 1px solid @borderColor;
+  border-bottom: none;
+  flex-direction: column;
+  margin-top: 20px;
+  .panel-head {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+  }
+  .f-promission-item {
+    display: flex;
+    width: 100%;
+    padding: 7px 0 7px 20px;
+    border-bottom: 1px solid @borderColor;
+    .item-title {
+      flex: 6;
+    }
+    .item-checkbox {
+      flex: 1;
+      text-align: center;
+    }
+  }
+  .panel-body {
+    flex: 1;
+    ul > li {
+      height: 40px;
+    }
+    .f-promission-item {
+      line-height: 22px;
+      .item-title {
+        line-height: 27px;
+      }
+    }
+  }
+}
+
+.f-tag-add {
+  .ant-btn-sm {
+    margin-left: 8px;
+  }
+}
+
+.ant-select-selected-icon {
+  display: none;
+}
+
+// 版本控制组件样式
+
+.f-version {
+  position: relative;
+  width: 100%;
+  .f-version-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    ul {
+      padding: 0 15px 0 18px;
+      line-height: 13px;
+      li {
+        border-bottom: 1px solid @borderColor;
+        padding: 5px 1px;
+      }
+    }
+    .f-version-item {
+      display: flex;
+      span {
+        flex: 5;
+      }
+      i {
+        flex: 1;
+      }
+    }
+    .ant-btn-link {
+      height: 25px;
+    }
+  }
+
+  .f-version-close {
+    position: absolute;
+    right: -13px;
+    top: -11px;
+    color: #e8e0e0;
+    &:hover {
+      color: #827a7a;
+    }
+  }
+}
+
+// 文件传输列表样式
+.f-progress {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  .ant-progress {
+    flex: 1;
+    margin: 0 20px;
+  }
+}
+
+// 文件夹点击样式
+.f-folder-item {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.f-version-menu-item {
+  .ant-btn-link {
+    padding: 0px;
+    margin: 0px;
+    span {
+      margin: 0px;
+    }
+  }
+}
+// /* diy 滚动条核心代码 */
+// &::-webkit-scrollbar {
+//     /*滚动条整体样式*/
+//     width: 4px;
+//     /*高宽分别对应横竖滚动条的尺寸*/
+//     height: 4px;
+// }
+
+// &::-webkit-scrollbar-thumb {
+//     /*滚动条里面小方块*/
+//     border-radius: 5px;
+//     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+//     background: rgba(255, 255, 255, 0.2);
+// }
+
+// &::-webkit-scrollbar-track {
+//     /*滚动条里面轨道*/
+//     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+//     border-radius: 0;
+//     background: rgba(0, 0, 0, 0.1);
+// }
+
+.f-select-content {
+  .ant-select-selection__choice {
+    .f-select-edit-icon {
+      display: none;
+    }
+  }
+  // 下拉选择框自定义
+  .f-select-option-item {
+    display: flex;
+    .item-title {
+      flex: 6;
+    }
+    .item-icon {
+      flex: 1;
+    }
+    .f-select-edit {
+      position: absolute;
+      top: 4px;
+      right: 30px;
+      display: none;
+      i {
+        font-size: 13px;
+        color: red;
+      }
+    }
+    &:hover {
+      .f-select-edit {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// 文件上传动画
+.f-upload-animation {
+  position: absolute;
+  left: 0;
+  right: 47px;
+  margin: auto;
+  z-index: 5;
+  top: 13px;
+  width: 2px;
+  height: 20px;
+  display: inline-block;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    background: #577fc0;
+    width: 2px;
+    height: 5px;
+    left: 0;
+    top: 2px;
+    /* border-radius: 0 0 10px 10px; */
+    -webkit-animation: uplaod 1s linear infinite;
+    animation: uplaod 1s linear infinite;
+  }
+  &::before {
+    content: '';
+    background: #1890ff;
+    /* color: #d85516; */
+    width: 2px;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    z-index: 3;
+    margin: auto;
+    -webkit-animation: uplaod 1s linear infinite;
+    animation: uplaod 1s linear infinite;
+  }
+}
+@-webkit-keyframes uplaod {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes uplaod {
+  0% {
+    -ms-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -ms-transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}

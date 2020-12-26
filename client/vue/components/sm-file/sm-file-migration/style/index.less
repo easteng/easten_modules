@@ -1,0 +1,64 @@
+.f-migration {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px 294px; */
+  justify-content: center;
+  padding: 5% 23%;
+  .f-repository {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    .target {
+      flex: 1;
+      .icon {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        i {
+          font-size: 49px;
+        }
+        span {
+          margin-top: 13px;
+        }
+      }
+      .info{
+        text-align: left;
+        padding: 16px;
+        margin-top: 18px;
+        p{
+            color: rgba(0, 0, 0, 0.85);
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 2.5;
+            .ant-btn{
+                font-size: 10px;
+            }
+        }
+        .ant-btn-link{
+          span{
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    .arror {
+      flex: 1;
+      i{
+          font-size:35px;
+      }
+    }
+  }
+  .f-progress{
+    display: flex;
+    flex-direction: column;
+    .span{
+        margin: 10px;
+    }
+    .ant-progress{
+        margin: 20px;
+    }
+    .ant-btn{
+        margin-top: 15px;
+    }
+  }
+}

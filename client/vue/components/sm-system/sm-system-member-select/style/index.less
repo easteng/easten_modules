@@ -1,0 +1,65 @@
+// @import '../../style/themes/default';
+// @import '../../style/mixins/index';
+
+// @icon-prefix-cls: ~'@{ant-prefix}-icon';
+
+@borderColor: #e8e8e8;
+
+.sm-system-member-select {
+  // border: 1px solid @borderColor;
+  padding: 4px;
+  max-height: 80px;
+  min-height: 40px;
+  overflow-y: auto;
+  position: relative;
+
+  &.disabled {
+    background: rgba(0, 0, 0, 0.02);
+    cursor: not-allowed;
+  }
+
+  &.bordered {
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    // padding: 10px;
+    .disabled {
+      background-color: none;
+      cursor: not-allowed;
+    }
+  }
+
+  .empty {
+    position: absolute;
+    color: #bfbfbf;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .selected-item {
+    background-color: #fafafa;
+    border: 1px solid #e8e8e8;
+    height: 26px;
+    line-height: 26px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 6px;
+    margin: 4px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.65);
+    .btn-close {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.45);
+      &:hover {
+        color: rgba(0, 0, 0, 0.75);
+      }
+    }
+    span {
+      margin-left: 10px;
+    }
+  }
+}

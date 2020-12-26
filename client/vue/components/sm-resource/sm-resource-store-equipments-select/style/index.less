@@ -1,0 +1,135 @@
+// @import '../../style/themes/default';
+// @import '../../style/mixins/index';
+
+// @icon-prefix-cls: ~'@{ant-prefix}-icon';
+
+@borderColor: #e8e8e8;
+
+.sm-resource-storeEquipmentsSelect-modal {
+  .ant-table-wrapper {
+    max-height: 450px;
+    overflow: auto;
+  }
+
+  .selected {
+    border: 1px solid @borderColor;
+    padding: 4px;
+    max-height: 80px;
+    align-items: center;
+    overflow: auto;
+    margin-bottom: 20px;
+
+    .ant-card-body {
+      max-height: 450px;
+    }
+
+    .empty {
+      position: absolute;
+      color: #bfbfbf;
+      top: 21%;
+      left: 43%;
+    }
+
+    .selected-item {
+      background-color: #fafafa;
+      border: 1px solid #e8e8e8;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 6px;
+      margin: 4px;
+      border-radius: 2px;
+      color: rgba(0, 0, 0, 0.65);
+
+      .selected-name {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .btn-close {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.45);
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.75);
+        }
+      }
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .modal-list {
+    margin-top: 10px;
+    height: 300px;
+    border: 1px solid @borderColor;
+  }
+}
+
+.storeEquipment-select-panel {
+  .selected-item {
+    background-color: #fafafa;
+    border: 1px solid #e8e8e8;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 6px;
+    margin: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    // color: rgba(0, 0, 0, 0.65);
+
+    .selected-name {
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .btn-close {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.45);
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+
+  &.disabled {
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  &.bordered {
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    padding: 2px;
+
+    .disabled {
+      background-color: none;
+      cursor: not-allowed;
+    }
+  }
+
+  .title {
+    margin: 0 4px;
+  }
+
+  .ant-tag {
+    margin: 3px 3px;
+  }
+
+  .tip {
+    margin-left: 10px;
+    color: #afaebe;
+  }
+}

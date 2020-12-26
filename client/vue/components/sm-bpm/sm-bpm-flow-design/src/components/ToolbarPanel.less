@@ -1,0 +1,31 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .toolbar-item-group {
+    display: flex;
+    align-items: center;
+    .toolbar-item {
+      width: 28px;
+      height: 28px;
+      border: 1px solid white;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(97, 97, 97);
+      margin: 0 6px;
+      cursor: pointer;
+      user-select: none;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        border: 1px solid #e8e8e8;
+      }
+    }
+  }
+}

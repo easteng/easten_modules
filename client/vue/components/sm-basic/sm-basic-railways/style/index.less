@@ -1,0 +1,63 @@
+// @import '../../style/themes/default';
+// @import '../../style/mixins/index';
+
+// @icon-prefix-cls: ~'@{ant-prefix}-icon';
+
+.railway-modal {
+  .ant-input-number {
+    width: 100%;
+  }
+}
+
+.import-modal {
+  .ant-modal-body {
+    overflow: auto;
+    max-height: 300px;
+  }
+}
+// .ant-transfer-customize-list .ant-transfer-list {
+//   flex: auto;
+//   width: auto;
+//   height: auto;
+//   min-height: 200px;
+// }
+
+.relate-station-modal {
+  .ant-transfer {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    .ant-transfer-list {
+      flex: auto;
+      width: auto;
+      height: auto;
+      min-height: 200px;
+      // .ant-table-small {
+      //   // border: 0;
+      // }
+    }
+    // .ant-table-body {
+    //   overflow-y: scroll;
+    //   // height: 230px;
+    //   margin: 0;
+    //   .ant-table-thead {
+    //     background-color: #fafafa;
+    //   }
+    // }
+  }
+
+  .ant-table-tbody {
+    .operator {
+      display: flex;
+      flex-direction: column;
+      .opetator-icon {
+        font-size: 12px;
+        color: #00000040;
+        cursor: pointer;
+        &:hover {
+          color: #1890ff;
+        }
+      }
+    }
+  }
+}

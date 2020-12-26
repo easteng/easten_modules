@@ -1,0 +1,50 @@
+<script>
+import Basic from './basic.md';
+
+import CN from './../index.zh-CN.md';
+import US from './../index.en-US.md';
+
+const md = {
+  cn: `# 计划变更
+        `,
+  us: `# 计划变更
+        `,
+};
+
+export default {
+  category: 'Modules',
+  subtitle: '计划变更',
+  type: 'CrPlan',
+  zhType: '通信计划',
+  title: 'SmCrPlanPlanChanges',
+  render() {
+    return (
+      <div id="components-sm-cr-plan-plan-changes-demo">
+        <md cn={md.cn} us={md.us} />
+        <Basic />
+        <api>
+          <CN slot="cn" />
+          <US />
+        </api>
+      </div>
+    );
+  },
+};
+</script>
+
+<style>
+#components-badge-demo .ant-badge:not(.ant-badge-not-a-wrapper) {
+  margin-right: 20px;
+}
+#components-badge-demo .head-example {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  background: #eee;
+  display: inline-block;
+  vertical-align: middle;
+}
+#components-badge-demo .ant-badge-not-a-wrapper:not(.ant-badge-status) {
+  margin-right: 8px;
+}
+</style>
